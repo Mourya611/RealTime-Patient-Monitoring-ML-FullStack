@@ -1,0 +1,92 @@
+# 🚑 Real-Time Patient Health Monitoring Dashboard with ML Diagnosis
+
+This project is a **Full Stack Real-Time Health Monitoring System** that tracks patient vitals like **Heart Rate**, **Temperature**, and **Oxygen Saturation**. It integrates **Machine Learning** to suggest whether a patient needs to **consult a doctor** based on critical health parameters.
+
+---
+
+## 🛠️ Technologies Used
+
+| Layer | Technology |
+|------|-------------|
+| Frontend | ReactJS, Axios, CSS |
+| Backend | Node.js, Express.js, Socket.IO |
+| Database | SQLite3 |
+| ML Model | Python (Flask API) + RandomForest Classifier |
+| Deployment | Localhost (VS Code + Google Colab for ML Training) |
+
+---
+
+## 🎯 Features
+
+- ✅ Real-time vitals monitoring with **WebSocket updates (Socket.io)**
+- ✅ **Add new patient data** through React form
+- ✅ ML-based **Doctor Consultation Suggestion** (using RandomForest Classifier)
+- ✅ REST API + WebSocket + ML API communication
+- ✅ SQLite3 for lightweight local database
+- ✅ Frontend UI with **CSS styling and live vitals updates**
+
+---
+
+## 📈 Architecture Flow Diagram
+[React Frontend (User Input & Dashboard)]
+|
+▼
+[Node.js + Express Backend (API + Socket.io)]
+|
+▼
+[SQLite Database (Patient Vitals)]
+|
+▼
+[Flask ML API (RandomForest Model Prediction)]
+|
+▼
+[Real-Time Doctor Suggestion Display in UI]
+
+ Explanation :
+
+Frontend sends data → Node handles API & sockets → Data saved to SQLite → Node calls Flask ML API → Prediction result sent back → Frontend shows suggestion.
+
+ML API Setup (Flask + ML Model):
+
+cd ml_api
+pip install flask scikit-learn joblib pandas
+python app.py
+
+Frontend Setup (React) :
+
+cd frontend
+npm install
+npm start
+
+
+🧠 ML Model Details
+✅ Algorithm: RandomForestClassifier
+
+✅ Trained on: Kaggle ICU Medical Dataset
+
+✅ Hyperparameter Tuning: RandomizedSearchCV
+
+✅ Accuracy Achieved: ~88%
+
+
+
+🚀 Output Demo
+🌡️ Shows patient vitals updating every 5 seconds
+
+🚨 Displays “Consult Doctor” suggestion for critical cases
+
+📝 New patient addition via frontend form
+
+📡 Live data updates without page reloads
+
+ 📂 Folder Structure :
+
+Project Root/
+├── backend/
+│   └── server.js, db.js
+├── frontend/
+│   └── src/, App.js, AddPatientForm.js
+├── ml_api/
+│   └── app.py, health_model.pkl, scaler.pkl
+├── .gitignore
+├── README.md
